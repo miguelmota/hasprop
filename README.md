@@ -1,6 +1,6 @@
 # hasprop
 
-Check if object hash property
+Check if object has property
 
 # Install
 
