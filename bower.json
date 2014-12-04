@@ -1,0 +1,22 @@
+{
+  "name": "hasprop",
+  "main": "hasprop.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/miguelmota/hasprop",
+  "authors": [
+    "Miguel Mota <miguelmota2@gmail.com>"
+  ],
+  "description": "Validate email address",
+  "keywords": [
+    "property",
+    "checker"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT"
+}
