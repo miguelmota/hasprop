@@ -6,7 +6,7 @@
   "authors": [
     "Miguel Mota <miguelmota2@gmail.com>"
   ],
-  "description": "Validate email address",
+  "description": "Check if object has property",
   "keywords": [
     "property",
     "checker"

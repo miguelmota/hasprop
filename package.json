@@ -1,7 +1,7 @@
 {
   "name": "hasprop",
   "version": "0.0.1",
-  "description": "Checks if property exists",
+  "description": "Check if object has property",
   "main": "hasprop.js",
   "directories": {
     "test": "test"
