@@ -25,6 +25,8 @@
 
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = hasprop;
+  } else if (typeof exports !== 'undefined') {
+    exports.hasprop = hasprop;
   } else {
     window.hasprop = hasprop;
   }
