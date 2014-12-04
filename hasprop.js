@@ -1,6 +1,5 @@
 (function(){
 
-
   function hasprop(o, s) {
     if (!o || !s) return false;
     if (!(typeof o === 'object' || o instanceof Object)) return false;
