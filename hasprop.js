@@ -1,6 +1,6 @@
 (function(){
 
-  function hasprop(o, s) {
+  function hasProp(o, s) {
     if (!o || !s) return false;
     if (!(typeof o === 'object' || o instanceof Object)) return false;
     if (!(typeof s === 'string' || s instanceof String)) return false;
@@ -23,11 +23,11 @@
   }
 
   if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = hasprop;
+    module.exports = hasProp;
   } else if (typeof exports !== 'undefined') {
-    exports.hasprop = hasprop;
+    exports.hasProp = hasProp;
   } else {
-    window.hasprop = hasprop;
+    window.hasProp = hasProp;
   }
 
 })();
