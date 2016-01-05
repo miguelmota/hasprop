@@ -1,6 +1,6 @@
 # hasprop
 
-Check if object has property, the easy way.
+Check if nested object has property, the easy way.
 
 Antiquated way:
 
@@ -91,7 +91,7 @@ objHasProp(['qux']) // true
 objHasProp(['yo']) // false
 ```
 
-For actually retrieving the value, check out the module [getprop](https://github.com/miguelmota/getprop).
+For getting the value, check out the module [getprop](https://github.com/miguelmota/getprop).
 
 # License
 
