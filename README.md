@@ -51,33 +51,33 @@ var obj = {
 };
 
 // array for path (recommended)
-getProp(obj, ['foo']) // true
-getProp(obj, ['deedee']) // false
-getProp(obj, ['qux', 'zee', 'boop']) // true
-getProp(obj, ['qux', 'zee', 'peep', 0]) // true
-getProp(obj, ['qux', 'zee', 'peep', 1]) // true
-getProp(obj, ['qux', 'key.with.dots']) // true
-getProp(obj, ['qux', '"key.with.quotes"', 'greet']) // true
-getProp(obj, ['qux', 'zee', 'peep', 2]) // true
-getProp(obj, ['qux', 'zee', 'peep', 2, '__data']) // true
-getProp(obj, ['qux', '$el']) // true
-getProp(obj, ['foo.bar']) // true
-getProp(obj, ['qux', 'qux']) // false
+hasProp(obj, ['foo']) // true
+hasProp(obj, ['deedee']) // false
+hasProp(obj, ['qux', 'zee', 'boop']) // true
+hasProp(obj, ['qux', 'zee', 'peep', 0]) // true
+hasProp(obj, ['qux', 'zee', 'peep', 1]) // true
+hasProp(obj, ['qux', 'key.with.dots']) // true
+hasProp(obj, ['qux', '"key.with.quotes"', 'greet']) // true
+hasProp(obj, ['qux', 'zee', 'peep', 2]) // true
+hasProp(obj, ['qux', 'zee', 'peep', 2, '__data']) // true
+hasProp(obj, ['qux', '$el']) // true
+hasProp(obj, ['foo.bar']) // true
+hasProp(obj, ['qux', 'qux']) // false
 
 // string for path
-getProp(obj, 'foo') // true
-getProp(obj, 'deedee') // false
-getProp(obj, 'qux.zee.boop') // true
-getProp(obj, 'qux.zee.peep.0') // true
-getProp(obj, 'qux.zee.peep.1') // true
-getProp(obj, 'qux.zee.peep[1]') // true
-getProp(obj, 'qux[key.with.dots]') // true
-getProp(obj, 'qux["key.with.quotes"].greet') // true
-getProp(obj, 'qux.zee.peep.2') // true
-getProp(obj, 'qux.zee.peep.2.__data') // true
-getProp(obj, 'qux.$el') // true
-getProp(obj, '[foo.bar]') // true
-getProp(obj, 'qux.qux') // false
+hasProp(obj, 'foo') // true
+hasProp(obj, 'deedee') // false
+hasProp(obj, 'qux.zee.boop') // true
+hasProp(obj, 'qux.zee.peep.0') // true
+hasProp(obj, 'qux.zee.peep.1') // true
+hasProp(obj, 'qux.zee.peep[1]') // true
+hasProp(obj, 'qux[key.with.dots]') // true
+hasProp(obj, 'qux["key.with.quotes"].greet') // true
+hasProp(obj, 'qux.zee.peep.2') // true
+hasProp(obj, 'qux.zee.peep.2.__data') // true
+hasProp(obj, 'qux.$el') // true
+hasProp(obj, '[foo.bar]') // true
+hasProp(obj, 'qux.qux') // false
 ```
 
 Partially applied:
