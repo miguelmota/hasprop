@@ -14,7 +14,7 @@ var exists = Boolean(
   obj.qux.zee.peep[2].__data);
 ```
 
-with getProp:
+with hasProp:
 
 ```javascript
 var exists = hasProp(obj, ['qux', 'zee', 'peep', 2, '__data']);
@@ -91,6 +91,7 @@ objHasProp(['qux']) // true
 objHasProp(['yo']) // false
 ```
 
+For actually retrieving the value, check out the module [getprop](https://github.com/miguelmota/getprop).
 For actually retrieving the value, check out the module [getprop](https://github.com/miguelmota/getprop).
 
 # License
