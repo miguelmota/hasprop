@@ -1,6 +1,24 @@
 # hasprop
 
-Check if object has property
+Check if object has property, the easy way.
+
+Antiquated way:
+
+```javascript
+var exists = Boolean(
+  obj &&
+  obj.qux &&
+  obj.qux.zee &&
+  obj.qux.zee.peep &&
+  obj.qux.zee.peep[2] &&
+  obj.qux.zee.peep[2].__data);
+```
+
+with getProp:
+
+```javascript
+var exists = hasProp(obj, ['qux', 'zee', 'peep', 2, '__data']);
+```
 
 # Install
 
@@ -13,29 +31,67 @@ npm install hasprop
 ```javascript
 var hasProp = require('hasprop');
 
-var foo = {
-  bar: {
-    baz: {
-      qux: 'corge',
-      c: [1,2]
+var obj = {
+  foo: 'bar',
+  qux: {
+    zee: {
+      boop: 4,
+      peep: [55,'zonk', {
+        __data: 'pow'
+      }],
     },
-    garphly: [{a:'b'}]
+    'key.with.dots': 'hello',
+    '"key.with.quotes"': {
+      greet: 'hi'
+    },
+    $el: 'element'
   },
-  fred: 'plugh'
+  'foo.bar': 'noob',
+  qax: null
 };
 
-hasProp(foo, 'bar') // true
-hasProp(foo, 'foo') // false
-hasProp(foo, 'bar.baz') // true
-hasProp(foo, 'bar.baz.grault') // false
-hasProp(foo, 'fred') // true
-hasProp(foo, 'bar.garphly.0') // true
-hasProp(foo, 'bar.garphly.0.a') // true
-hasProp(foo, 'bar.baz.garphly.1') // false
-hasProp(foo, 'bar.baz.corge.garphly.5') // false
-hasProp(foo, 'bar.baz.c.1') // true
-hasProp(foo, 'bar.baz.c.2') // false
+// array for path (recommended)
+getProp(obj, ['foo']) // true
+getProp(obj, ['deedee']) // false
+getProp(obj, ['qux', 'zee', 'boop']) // true
+getProp(obj, ['qux', 'zee', 'peep', 0]) // true
+getProp(obj, ['qux', 'zee', 'peep', 1]) // true
+getProp(obj, ['qux', 'key.with.dots']) // true
+getProp(obj, ['qux', '"key.with.quotes"', 'greet']) // true
+getProp(obj, ['qux', 'zee', 'peep', 2]) // true
+getProp(obj, ['qux', 'zee', 'peep', 2, '__data']) // true
+getProp(obj, ['qux', '$el']) // true
+getProp(obj, ['foo.bar']) // true
+getProp(obj, ['qux', 'qux']) // false
+
+// string for path
+getProp(obj, 'foo') // true
+getProp(obj, 'deedee') // false
+getProp(obj, 'qux.zee.boop') // true
+getProp(obj, 'qux.zee.peep.0') // true
+getProp(obj, 'qux.zee.peep.1') // true
+getProp(obj, 'qux.zee.peep[1]') // true
+getProp(obj, 'qux[key.with.dots]') // true
+getProp(obj, 'qux["key.with.quotes"].greet') // true
+getProp(obj, 'qux.zee.peep.2') // true
+getProp(obj, 'qux.zee.peep.2.__data') // true
+getProp(obj, 'qux.$el') // true
+getProp(obj, '[foo.bar]') // true
+getProp(obj, 'qux.qux') // false
 ```
+
+Partially applied:
+
+```
+var objHasProp = hasProp(obj);
+
+objHasProp(['foo']) //  true
+objHasProp('[foo.bar']) // true
+objHasProp(['qux']) // true
+objHasProp(['yo']) // false
+```
+
+For actually retrieving the value, check out the module [getprop](https://github.com/miguelmota/getprop).
 
 # License
 
