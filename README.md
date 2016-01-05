@@ -92,7 +92,6 @@ objHasProp(['yo']) // false
 ```
 
 For actually retrieving the value, check out the module [getprop](https://github.com/miguelmota/getprop).
-For actually retrieving the value, check out the module [getprop](https://github.com/miguelmota/getprop).
 
 # License
 
