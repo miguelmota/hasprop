@@ -26,6 +26,10 @@ var exists = hasProp(obj, ['qux', 'zee', 'peep', 2, '__data']);
 npm install hasprop
 ```
 
+```bash
+bower install hasprop
+```
+
 # Usage
 
 ```javascript
